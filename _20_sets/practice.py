@@ -1,5 +1,8 @@
 txt = input("Enter any text: ")
-txt.lower()
+letter = {
+    ch
+    for ch in txt.lower()
+    if ch.isalpha()
+          }
 
-x_az = txt.isalpha()
-print(x_az)
+print(f"Уникальные буквы {letter}")
