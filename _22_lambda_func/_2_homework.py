@@ -10,6 +10,10 @@ people = [
     {"name": "Diana", "age": 30},
 ]
 
+min_people = min(people, key=lambda x: (x["age"], x["name"]))
+print(min_people) # : {'name': 'Bob', 'age': 20}
+
+
 # решение
 min_people = min(people, key=lambda x: (x["age"], x["name"]))
 print(min_people)  # Output: {'name': 'Bob', 'age': 20}
