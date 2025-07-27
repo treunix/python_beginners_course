@@ -88,7 +88,7 @@ def fight(*, character_1: Character, character_2: Character) -> None:
         print(character_2)
         if character_2.is_alive():
             character_2.attack(target=character_1)
-        print(character_1)
+            print(character_1)
 
     if character_1.is_alive():
         character_1.level_up()
