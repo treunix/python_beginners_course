@@ -75,16 +75,14 @@ class Elf(Character):
     def attack(self, *, target: "Character") -> None:
         attack_power = self.attack_power
         if target.health_points_percent() < 30:
-            attack_power = self.attack_power * 3
+            self.attack_power *= 3
         target.got_damage(damage=attack_power)
 
-
-ork = Ork(level=1)
-elf = Elf(level=1)
-
+ork_1 = Ork(level=1)
+elf_1 = Elf(level=1)
 
 def fight(*, character_1: Character, character_2: Character) -> None:
-    print("Fight started", character_1, character_2)
+    print("Fight started:", character_1, character_2)
     while character_1.is_alive() and character_2.is_alive():
         character_1.attack(target=character_2)
         print(character_2)
@@ -97,8 +95,7 @@ def fight(*, character_1: Character, character_2: Character) -> None:
     else:
         character_2.level_up()
 
-    print(f"{character_1.character_name} is {'alive' if character_1.is_alive() else 'dead'}", character_1)
-    print(f"{character_2.character_name} is {'alive' if character_2.is_alive() else 'dead'}", character_2)
+    print(f"{character_1.character_name} is {"alive" if character_1.is_alive() else "dead"}", character_1)
+    print(f"{character_2.character_name} is {"alive" if character_2.is_alive() else "dead"}", character_2)
 
-
-fight(character_1=ork, character_2=elf)
+fight(character_1=ork_1, character_2=elf_1)
